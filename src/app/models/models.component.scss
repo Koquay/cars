@@ -1,0 +1,75 @@
+$primary: #8aacc8;
+$secondary: #bbdefb;
+$tertiary: #eeffff;
+$deep: #2c4650;
+
+body {
+  font-family: 'Roboto';
+  font-size: 1.1rem;
+  background: $secondary;
+}
+
+
+    
+.jumbotron {
+    background: $primary;
+    
+    h1 {
+        font-weight: 700;
+        font-style: italic;
+        color: $deep;
+    }
+}
+
+nav {
+    background: $tertiary;
+    margin-bottom: 1rem;
+}
+
+#make {
+    .car {
+        position: relative;        
+        min-height: 266px !important;    
+        justify-content: center;
+        margin-bottom: 1rem;
+        
+        div {
+            display: flex;
+            justify-content: space-between!important;
+            font-size: 1rem;
+            
+            span {
+                display: inline-block;
+            }
+            
+            .model {
+                font-weight: bold;
+            }
+        }
+        
+        .label {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: $deep;
+        }   
+    }    
+    
+    .btn-group {
+        .btn {
+            background: $primary;
+            border: $primary;
+            margin: 0 .2rem .5rem;
+            border-radius: .1rem;
+            min-width: 10rem;
+        }
+        
+        .dropdown-menu {
+            background: $tertiary;
+        }
+    }
+    
+    a {
+        color: $deep;
+    }
+}

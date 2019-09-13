@@ -1,0 +1,203 @@
+<app-header></app-header>
+
+<div class="container-fluid" id="make">
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="font-weight-bold">ACURA</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <div class="btn-group" role="group">
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Year
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item" href="#">
+                            2019
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            2018
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            2017
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            2016
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            2015
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            2014
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            2013
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop2" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Model
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                        <a class="dropdown-item" href="#">
+                            CSX
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            ILX
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            MDX
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            RDX
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            TLX
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            2014
+                        </a>
+                    </div>
+                </div>
+
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop3" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Price
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                        <form>
+                            <div class="form-group px-2">
+                                <!-- <label for="formControlRange">Example Range input</label> -->
+                                <input type="range" min="0" max="90000" step="1000" class="form-control-range" id="formControlRange">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row d-flex">
+        <div class="col-12 col-md-4 col-lg-3 car-column" *ngFor="let car of model">
+            <a href="car.html">
+                <div class="card d-flex car px-2">
+                    <img class="img-fluid card-img-top w-100 d-block" src="assets/img/{{model.image[0]}}">
+                    <div>
+                        <span>{{car.price | currency:'USD':'symbol-narrow'}}<br></span>
+                        <span>{{car.mileage}} miles<br></span>
+                    </div>
+                    <div class="label">
+                        <span class="model">{{model.year}} {{model.model}}<br></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <a href="car.html">
+                <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/acura-mdx-1.jpg">
+                    <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                    <div class="label"><span class="model">2017 MDX<br></span></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/acura-tlx.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 TLX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/acura-tsx.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/acura-rdx.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 RDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/acura-ilx.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 ILX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/acura-2.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/ezgif-1-909cb176dff9.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/ezgif-1-909cb176dff9.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/ezgif-1-909cb176dff9.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/ezgif-1-909cb176dff9.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/ezgif-1-909cb176dff9.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/ezgif-1-909cb176dff9.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/ezgif-1-909cb176dff9.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/ezgif-1-909cb176dff9.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/ezgif-1-909cb176dff9.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 car-column">
+            <div class="card d-flex car px-2"><img class="img-fluid card-img-top w-100 d-block" src="assets/img/ezgif-1-909cb176dff9.jpg">
+                <div><span>$33,000<br></span><span>43,000 miles<br></span></div>
+                <div class="label"><span class="model">2017 MDX<br></span></div>
+            </div>
+        </div>
+    </div>
+</div>

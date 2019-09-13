@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+<div class="container-fluid" id="main">
+    <div class="row d-flex">
+        <div class="col-12 col-md-4 col-lg-3 car-column" *ngFor="let make of makes">
+            <a [routerLink]="['/cars', make.name]">
+                <div class="card d-flex car p-1">
+                    <img class="img-fluid card-img-top w-100 d-block" src="assets/img/{{make.image}}">
+                    <div class="label">
+                        <span class="name">{{make.name}}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

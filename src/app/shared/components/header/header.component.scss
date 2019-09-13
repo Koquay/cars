@@ -1,0 +1,19 @@
+$primary: #8aacc8;
+$secondary: #bbdefb;
+$tertiary: #eeffff;
+$deep: #2c4650;
+
+.jumbotron {
+    background: $primary;
+    
+    h1 {
+        font-weight: 700;
+        font-style: italic;
+        color: $deep;
+    }
+}
+
+nav {
+    background: $tertiary;
+    margin-bottom: 1rem;
+}
