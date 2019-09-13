@@ -8,12 +8,12 @@ import * as _ from 'lodash';
   providedIn: 'root'
 })
 export class CarsService {
-  private carsUrl ='/api/cars/';
+  private carsUrl = '/api/cars/';
   private cars;
-  
+
   constructor(
-    private httpClient:HttpClient
-  ) { 
+    private httpClient: HttpClient
+  ) {
     this.createDB();
   }
 
@@ -22,7 +22,7 @@ export class CarsService {
       tap(cars => {
         console.log('cars', cars)
         this.cars = cars;
-    })
+      })
     )
   }
 
@@ -39,18 +39,18 @@ export class CarsService {
     let prices = [];
     let cars = this.cars.filter(car => car.make == make);
 
-    for(let car of cars) {
+    for (let car of cars) {
       prices.push(car.price)
     }
 
     prices = prices.sort();
     let minMaxPrice = [];
     minMaxPrice[0] = prices[0];
-    minMaxPrice[1] = prices[prices.length-1];
-    
+    minMaxPrice[1] = prices[prices.length - 1];
+
 
     console.log('min max prices', minMaxPrice)
-    
+
     return of(minMaxPrice);
   }
 
@@ -58,7 +58,7 @@ export class CarsService {
     let years = [];
     let cars = this.cars.filter(car => car.make == make);
 
-    for(let car of cars) {
+    for (let car of cars) {
       years.push(car.year)
     }
 
@@ -71,7 +71,7 @@ export class CarsService {
     let models = [];
     let cars = this.cars.filter(car => car.make == make);
 
-    for(let car of cars) {
+    for (let car of cars) {
       models.push(car.model)
     }
 
@@ -80,20 +80,21 @@ export class CarsService {
     return of(models);
   }
 
-  public filterCars(filter, maxPrice?) {
+  public filterCars(filter) {
     let filteredCars = this.cars;
 
-    if(filter.year) {
-      filteredCars = filteredCars.filter(car => car.year == filter.year);
+    if (filter) {
+      if (filter.year) {
+        filteredCars = filteredCars.filter(car => car.year == filter.year);
+      }
+
+      if (filter.model) {
+        filteredCars = filteredCars.filter(car => car.model == filter.model);
+      }
+
+      filteredCars = filteredCars.filter(car => car.price >= filter.price);
     }
 
-    if(filter.model) {
-      filteredCars = filteredCars.filter(car => car.model == filter.model);
-    }
-
-    if(maxPrice) {
-      filteredCars = filteredCars.filter(car => car.price >= filter.price && car.price <= maxPrice );
-    }    
 
     return of(filteredCars);
   }

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cars';
+
+  constructor() {
+    localStorage.removeItem('breadcrumbs')
+    let breadcrumbs = [{breadcrumb: 'Makes', url: '/makes'}];
+    localStorage.setItem('breadcrumbs', JSON.stringify(breadcrumbs)) 
+  }
 }

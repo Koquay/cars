@@ -87,7 +87,7 @@ export class CarsComponent implements OnInit, DoCheck {
   }
 
   private sortByPrice() {
-    this.carsService.filterCars(this.filter, this.maxPrice).subscribe(cars => {
+    this.carsService.filterCars(this.filter).subscribe(cars => {
       this.cars = cars;
     })
   }

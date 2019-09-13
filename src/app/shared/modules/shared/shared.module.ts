@@ -4,16 +4,19 @@ import { CommonModule } from '@angular/common';
 import { SharedRoutingModule } from './shared-routing.module';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { HeaderComponent } from '../../components/header/header.component';
+import { BreadcrumbComponent } from '../../breadcrumb/breadcrumb.component';
 
 
 @NgModule({
   declarations: [
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    BreadcrumbComponent
   ],
   exports: [
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    BreadcrumbComponent
   ],
   imports: [
     CommonModule,
